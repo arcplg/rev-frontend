@@ -1,0 +1,4 @@
+[submodule ".devcontainer"]
+	path = .devcontainer
+	url = https://github.com/kimura-apg/dev_containers
+	branch = node

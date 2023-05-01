@@ -1,0 +1,22 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "^0.4.0",
+    "@types/node": "^18.15.11",
+    "nuxt": "^3.4.0",
+    "stylelint": "^15.4.0",
+    "stylelint-config-recommended-vue": "^1.4.0",
+    "stylelint-config-standard-scss": "^8.0.0",
+    "vite-plugin-stylelint": "^4.3.0"
+  },
+  "dependencies": {
+  }
+}
