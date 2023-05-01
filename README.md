@@ -1,2 +1,0 @@
-# rev-frontend
-rev frontend
