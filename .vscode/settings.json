@@ -1,3 +1,39 @@
 {
-  "editor.formatOnSave": true,
+  "typescript.tsdk": "./node_modules/typescript/lib",
+
+  "files.useExperimentalFileWatcher": true,
+  "files.watcherExclude": {
+    "**/node_modules/**": true,
+    "**/.nuxt/**": true,
+    "**/.output/**": true,
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    ".nuxt": true,
+    ".output": true,
+    "**/tmp/cache": true
+  },
+  // デフォルトオフ
+  "editor.formatOnSave": false,
+  "css.validate": false,
+  "scss.validate": false,
+  "javascript.validate.enable": false,
+  "javascript.format.enable": false,
+
+  // prettierは禁止
+  "prettier.enable": false,
+  // vetur off 
+  "vetur.format.defaultFormatter.js": "none",
+  "vetur.format.defaultFormatter.html": "none",
+  "vetur.validation.template": false,
+
+  "stylelint.validate": ["css", "scss", "vue"],
+
+  // js/vueはeslintで lint/fix
+  "editor.codeActionsOnSave": {
+    "source.fixAll": false,
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
+  },
 }

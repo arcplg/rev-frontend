@@ -1,0 +1,64 @@
+html {
+  font-size: 2.6667vw; // 10px / 375px
+
+  @media screen and (min-width: 768px) {
+    font-size: 20.48px;
+  }
+}
+
+body {
+  color: #333;
+
+  // background-color: $color-bg;
+  font-family: "Noto Sans JP", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-size-adjust: 100%;
+  word-break: break-all;
+}
+
+a {
+  text-decoration: none;
+
+  &[href^="tel:"] {
+    &:hover {
+      color: #00f;
+    }
+  }
+}
+
+// ::-moz-selection {
+//   background-color: #036eb8;
+//   color: #fff;
+//   text-shadow: none;
+// }
+
+// ::selection {
+//   background-color: #036eb8;
+//   color: #fff;
+//   text-shadow: none;
+// }
+
+*:focus:not(:focus-visible),
+*::before:focus:not(:focus-visible),
+*::after:focus:not(:focus-visible) {
+  outline: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+@font-face {
+  font-family: Tableva;
+  font-style: normal;
+  font-weight: normal;
+  src: url("@/assets/fonts/tableva_font.eot?coitlt");
+  src: url("@/assets/fonts/tableva_font.eot?coitlt#iefix") format("embedded-opentype"), url("@/assets/fonts/tableva_font.ttf?coitlt") format("truetype"), url("@/assets/fonts/tableva_font.woff?coitlt") format("woff"), url("@/assets/fonts/tableva_font.svg?coitlt#tableva") format("svg");
+}

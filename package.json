@@ -1,22 +1,67 @@
 {
-  "name": "nuxt-app",
+  "name": "nuxt3",
+  "version": "0.0.1",
+  "description": "",
+  "author": "",
   "private": true,
+  "engines": {
+    "node": ">=18.13.0"
+  },
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "dev:https": "NODE_OPTIONS='--openssl-legacy-provider' cross-env CONFIG_FILE=\"local\" nuxt dev --host=0.0.0.0 --port=443 --https --ssl-cert ./linemini-apps-dev.retailstudio.jp.pem --ssl-key ./linemini-apps-dev.retailstudio.jp-key.pem",
+    "dev": "NODE_OPTIONS='--openssl-legacy-provider' cross-env CONFIG_FILE=\"local\" nuxt dev",
+    "dev:dev": "NODE_OPTIONS='--openssl-legacy-provider' cross-env CONFIG_FILE=\"dev\" nuxt dev",
+    "dev:stg": "NODE_OPTIONS='--openssl-legacy-provider' cross-env CONFIG_FILE=\"stg\" nuxt dev",
+    "dev:prod": "NODE_OPTIONS='--openssl-legacy-provider' cross-env CONFIG_FILE=\"prod\" nuxt dev",
+    "build:dev": "NODE_OPTIONS='--openssl-legacy-provider' cross-env CONFIG_FILE=\"dev\" nuxt build",
+    "build:stg": "NODE_OPTIONS='--openssl-legacy-provider' cross-env CONFIG_FILE=\"stg\" nuxt build",
+    "build:prod": "NODE_OPTIONS='--openssl-legacy-provider' cross-env CONFIG_FILE=\"prod\" nuxt build",
+    "start:dev": "NODE_OPTIONS='--openssl-legacy-provider' cross-env CONFIG_FILE=\"dev\" nuxt start",
+    "start:stg": "NODE_OPTIONS='--openssl-legacy-provider' cross-env CONFIG_FILE=\"stg\" nuxt start",
+    "start:prod": "NODE_OPTIONS='--openssl-legacy-provider' cross-env CONFIG_FILE=\"prod\" nuxt start",
+    "generate:dev": "NODE_OPTIONS='--openssl-legacy-provider' cross-env CONFIG_FILE=\"dev\" nuxt generate",
+    "generate:stg": "NODE_OPTIONS='--openssl-legacy-provider' cross-env CONFIG_FILE=\"stg\" nuxt generate",
+    "generate:prod": "NODE_OPTIONS='--openssl-legacy-provider' cross-env CONFIG_FILE=\"prod\" nuxt generate",
+    "preview": "NODE_OPTIONS='--openssl-legacy-provider' cross-env CONFIG_FILE=\"local\" nuxt preview",
+    "preview:dev": "NODE_OPTIONS='--openssl-legacy-provider' cross-env CONFIG_FILE=\"dev\" nuxt preview",
+    "preview:stg": "NODE_OPTIONS='--openssl-legacy-provider' cross-env CONFIG_FILE=\"stg\" nuxt preview",
+    "preview:prod": "NODE_OPTIONS='--openssl-legacy-provider' cross-env CONFIG_FILE=\"prod\" nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint:code": "eslint 'src/**/*.{js,ts,vue,}' --ignore-path .gitignore",
+    "lintfix:code": "eslint 'src/**/*.{js,ts,vue}' --fix --ignore-path .gitignore",
+    "lint:type": "tsc -p . --noEmit && vue-tsc --noEmit",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{js,ts,vue}": "yarn lint:code",
+    "*.scss": "yarn lint:style"
   },
   "devDependencies": {
+    "@gtm-support/vue-gtm": "^2.0.0",
     "@nuxt/devtools": "^0.4.0",
-    "@types/node": "^18.15.11",
-    "nuxt": "^3.4.0",
-    "stylelint": "^15.4.0",
-    "stylelint-config-recommended-vue": "^1.4.0",
-    "stylelint-config-standard-scss": "^8.0.0",
-    "vite-plugin-stylelint": "^4.3.0"
+    "@nuxtjs/eslint-config-typescript": "^12.0.0",
+    "@types/node": "^18.14.2",
+    "@typescript-eslint/eslint-plugin": "^5.51.0",
+    "@typescript-eslint/parser": "^5.51.0",
+    "@vueuse/core": "^9.13.0",
+    "@vueuse/nuxt": "^9.13.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.33.0",
+    "eslint-plugin-vue": "^9.9.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.1",
+    "nuxt": "3.3.3",
+    "postcss-html": "^1.5.0",
+    "sass": "^1.58.0",
+    "stylelint": "^14.16.1",
+    "stylelint-config-property-sort-order-smacss": "^9.0.0",
+    "stylelint-config-standard-scss": "^6.1.0",
+    "stylelint-config-standard-vue": "^1.0.0",
+    "typescript": "^4.9.5"
   },
   "dependencies": {
+    "@pinia/nuxt": "^0.4.8",
+    "crypto-js": "^4.1.1",
+    "moment": "^2.29.4"
   }
 }
